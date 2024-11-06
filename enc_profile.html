@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<div>
+    <p>Hi, {{ account['first_name'] }}!</p>
+    {% if account['blood_type'] and account['marital_status'] and account['place_of_birth'] %}
+    <p>Your information is now encrypted using a lattice-based cryptosystem called NTRUEncrypt, except for your username. The numbers you see below are coefficients of polynomial with a degree of N = 107. This encrypted data is saved to our MySQL database instead of the raw information sent by the user.</p>
+    {% else %}
+    <p>Your demographic information is still incomplete! <br> Click the "Update Profile" button and complete your information.</p>
+    {% endif %}
+    <table>
+
+        <div>
+            <tr>
+                <td>Username:</td>
+                <td>{{ account['username'] or "" }}</td>
+            </tr>
+            
+
+            <tr>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>PCN:</td>
+                <td>{{ account['PCN'] or "" }}</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>{{ account['first_name'] or "" }} {{ account['middle_name'] or "" }} {{ account['last_name'] or "" }}</td>
+            </tr>
+            <tr>
+                <td>Birthdate:</td>
+                <td>{{ account['birthday_month'] or "" }} {{ account['birthday_day'] or "" }}, {{ account['birthday_year'] or "" }}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{ account['email'] or "" }}</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>{{ account['house_number'] or "" }} {{ account['street'] or ""}} {{ account['barangay'] or "" }} {{ account['city'] or "" }} {{ account['province'] or "" }}</div>
+            </tr>
+            <tr>
+                <td>Sex:</td>
+                <td>{{ account['sex'] or "" }}</div>
+            </tr>
+            <tr>
+                <td>Blood Type:</td>
+                <td>{{ account['blood_type'] or "" }}</div>
+            </tr>
+            <tr>
+                <td>Marital Status:</td>
+                <td>{{ account['marital_status'] or "" }}</div>
+            </tr>
+            <tr>
+                <td>Place of Birth:</td>
+                <td>{{ account['place_of_birth'] or "" }}</div>
+            </tr>
+        </div>
+        
+    </table>
+    <p><br>If you'd like to see the decrypted version of your data, click on "Decrypt Profile".</p>
+    <a href="{{ url_for('edit_profile') }}">Update Profile</a>
+    <a href="{{ url_for('profile') }}">Decrypt Profile</a>
+</div>
+
+{% endblock %}

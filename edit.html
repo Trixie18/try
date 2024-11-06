@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Update Information</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+    <body>
+        <div class="edit">
+            <form action="{{ url_for('edit_profile') }}" method="post" novalidate>
+                <h1>Update Information</h1>
+                <label for="username">
+                    <i class="fas fa-user">  Username</i>
+                </label>
+                <input type="text" name="username" placeholder="{% if account['username'] %}{{ account['username'] }}{% else %}Username{% endif %}" id="username" required>
+                
+                <label for="PCN">
+                    <i class="far fa-address-card">  16-digit PCN</i>
+                </label>
+                <input type="text" name="pcn" placeholder="{% if account['pcn'] %}{{ account['pcn'] }}{% else %} ####-####-####-#### {% endif %}" id="username" required>
+
+                <label for="password">
+                    <i class="fas fa-lock">  Change Password</i>
+                </label>
+                <input type="password" name="password" placeholder="{% if account['password'] %}New Password{% else %}Username{% endif %}" id="password" required>
+                <input type="confirm_password" name="confirm_password" placeholder="Confirm Password" id="confirm_password">
+                
+                <label for="email">
+                    <i class="fas fa-envelope">  Email</i>
+                </label>
+                <input type="email" name="email" placeholder="{% if account['email'] %}{{ account['email'] }}{% else %}Email{% endif %}" id="email" required>
+                
+                <label for="birthday">
+                    <i class="fas fa-birthday-cake">  Birthdate</i>
+                </label>
+                <div class="birthday">
+                    <select name="birthday_month" id="birthday_month">
+                        <option value="" disabled selected>{% if account['birthday_month'] %}{{ account['birthday_month'] }}{% else %}Month{% endif %}</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <select name="birthday_day" id="birthday_day">
+                        <option value="">{% if account['birthday_day'] %}{{ account['birthday_day'] }}{% else %}Day{% endif %}</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <select name="birthday_year" id="birthday_year">
+                        <option value="">{% if account['birthday_year'] %}{{ account['birthday_year'] }}{% else %}Username{% endif %}</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                    </select>
+                </div>
+                    <label for="address">
+                        <i class="fas fa-house-damage">  Address</i>
+                    </label>
+                    <input type="text" name="house_number" placeholder="{% if account['house_number'] %}{{ account['house_number'] }}{% else %}House Number{% endif %}" id="house_number" required>
+                    <input type="text" name="street" placeholder="{% if account['street'] %}{{ account['street'] }}{% else %}Street{% endif %}" id="house_number" required>
+                    <input type="text" name="barangay" placeholder="{% if account['barangay'] %}{{ account['barangay'] }}{% else %}Barangay{% endif %}" id="barangay" required>
+                    <input type="text" name="city" placeholder="{% if account['city'] %}{{ account['city'] }}{% else %}City{% endif %}" id="city" required>
+                    <input type="text" name="province" placeholder="{% if account['province'] %}{{ account['province'] }}{% else %}Province{% endif %}" id="province" required>
+                
+                    <label for="sex">
+                        <i class="fas fa-venus-mars">  Sex</i>
+                    </label>
+                <div class="sex">
+                    <select name="sex" id="sex">
+                        <option value="" disabled selected>{% if account['sex'] %}{{ account['sex'] }}{% else %}Sex{% endif %}</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                    <label for="blood_type">
+                        <i class="fas fa-tint">  Blood Type</i>
+                    </label>
+                <div class="blood_type">
+                    <select name="blood_type" id="blood_type">
+                        <option value="" disabled selected>{% if account['blood_type'] %}{{ account['blood_type'] }}{% else %}Blood Type{% endif %}</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="Others">Others</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
+
+                <label for="marital_status">
+                    <i class="fas fa-church">  Marital Status</i>
+                </label>
+            <div class="marital_status">
+                <select name="marital_status" id="marital_status">
+                    <option value="" disabled selected>{% if account['marital_status'] %}{{ account['marital_status'] }}{% else %}Marital Status{% endif %}</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+                <label for="place_of_birth">
+                    <i class="fas fa-map-marker-alt">  Place of Birth</i>
+                </label>
+                <input type="text" name="place_of_birth" placeholder="{% if account['place_of_birth'] %}{{ account['place_of_birth'] }}{% else %} City {% endif %}" id="place_of_birth" required>
+                
+                    <div class="msg">{{ msg }}</div>
+                    <input type="submit" value="Back to Profile" id="submit-btn">
+
+            </form>
+        </div>
+        <script>
+            const formInputs = document.querySelectorAll('input');
+            const submitBtn = document.getElementById('submit-btn');
+
+            formInputs.forEach(input => {
+                input.addEventListener('input', checkInput);
+            });
+
+            function checkInput() {
+                let hasValue = false;
+                formInputs.forEach(input => {
+                    if (input.value !== '') {
+                        hasValue = true;
+                }
+            });
+            if (hasValue) {
+                submitBtn.value = 'Submit changes';
+            } else {
+                submitBtn.value = "Back to Profile";
+            }
+        }
+        </script>
+    </body>
+</html>
+
+{% if error %}
+    <p style="color: red">{{ error }}</p>
+{% endif %}

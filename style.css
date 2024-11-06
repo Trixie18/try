@@ -1,0 +1,483 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-color: #203064;
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin: 0;
+}
+.login {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+.login h1, .register h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login .links, .register .links {
+    display: flex;
+    padding: 0 15px;
+}
+.login .links a, .register .links a {
+    color: #adb2ba;
+    text-decoration: none;
+    display: inline-flex;
+    padding: 0 10px 10px 10px;
+    font-weight: bold;
+}
+.login .links a:hover, .register .links a:hover {
+    color: #FFB300;
+}
+.login .links a.active, .register .links a.active {
+    border-bottom: 3px solid #d30520;
+    color: #d30520;
+}
+.login form, .register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label, .register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #d30520;
+    color: #ffffff;
+}
+
+.login form label:hover, .register form label:hover {
+    background-color: #FFB300;
+    transition: background-color 0.2s;
+}
+
+.login form input[type="password"], .login form input[type="text"], .login form input[type="email"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #d30520;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
+    background-color: #FFB300;
+    transition: background-color 0.2s;
+}
+.navtop {
+    background-color: #203064;
+    height: 60px;
+    width: 100%;
+    border: 0;
+}
+.navtop div {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navtop div h1{
+    display: flex;
+    align-items: center;
+}
+
+.navtop div h1 {
+    flex: 1;
+    font-size: 16px;
+    padding: 0;
+   margin: 0;
+    color: #eaebed;
+    font-weight: normal;
+}
+.navtop div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #eaebed;
+    font-weight: bold;
+
+}
+.navtop div a i {
+    padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+    color: #FFB300;
+}
+body.loggedin {
+    background-color: #f3f4f7;
+}
+.content {
+    width: 1000px;
+    margin: 0 auto;
+}
+.content h2 {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #e0e0e3;
+    color: #203064;
+}
+.content > p, .content > div {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #fff;
+    width: 100%;
+    border: 0;
+}
+
+.content > p table td, .content > div table td {
+  padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+  font-weight: bold;
+  color: #4a536e;
+  padding-right: 15px;
+}
+.content > div p {
+  padding: 5px;
+  margin: 0 0 10px 0;
+}
+.content > div a {
+    color: #eaebed;
+    text-decoration: none;
+    display: inline-flex;
+    padding: 0 10px 10px 10px;
+    font-weight: bold;
+    background-color: #203064;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    margin-left: 8px;
+    border-radius: 5px;
+}
+
+.content > div a:hover {
+    background-color: #FFB300;
+}
+
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+.register {
+    width: 700px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+
+.register form input[type="submit"] {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #d30520;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+
+.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+    width: 260px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 0;
+}
+
+.register .form-row {
+    display: flex;
+}
+
+.register .form-group {
+    padding: 5px;
+    width: 50%;
+    display: flex;
+    
+}
+
+.register .form-group input {
+    width: 100%;
+
+}
+
+.register .form-group .last-name-input {
+    width: 260px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 0;
+}
+
+.edit {
+    width: 400px;
+    max-width: fit-content;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+
+}
+
+.edit form h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 0px 0 10px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.edit form {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #fff;
+    justify-content: center;
+}
+
+.edit form input[type="text"], input[type="email"], input[type="password"], input[type="confirm_password"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register form #birthday_month {
+    
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.register form #birthday_day {
+    
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.register form #birthday_year {
+    
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+
+.edit form .birthday #birthday_month {
+    width: 50%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.edit form .birthday #birthday_day {
+    width: 20%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.edit form .birthday #birthday_year {
+    width: 27%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.edit form .sex, .marital_status {
+    width: 10%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.edit form .blood_type {
+    width: 10%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.edit form input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit form input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+#birthday_month {
+    margin-right: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 130px;
+    height: 40px;
+    justify-content: center;
+}
+
+#birthday_year {
+    margin-right: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 70px;
+    height: 40px;
+    justify-content: center;
+}
+
+#birthday_day {
+    margin-right: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 60px;
+    height: 40px;
+    justify-content: center;
+}
+
+#sex {
+    margin-right: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+    justify-content: center;
+}
+
+#blood_type, #marital_status {
+    margin-right: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+    justify-content: center;
+}
+
+.birthday-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+
+.birthday-container select {
+    margin-right: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 100px;
+    height: 30px;
+    justify-content: center;
+    
+}
+
